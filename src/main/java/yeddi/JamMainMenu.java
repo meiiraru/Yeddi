@@ -13,8 +13,9 @@ public class JamMainMenu extends Screen {
 
     @Override
     public void init() {
-        if (client.window.scaledWidth != 500 || client.window.scaledHeight != 300) {
-            int scale = Math.max(Math.round(Math.min(client.window.width / 500f, client.window.height / 300f)), 1);
+        if (client.window.width % 500 != 0 || client.window.height % 300 != 0) {
+            int scale = Math.max((int) (Math.min(client.window.width / 500f, client.window.height / 300f)), 1);
+            client.window.guiScale = scale;
             client.window.resize(500 * scale, 300 * scale);
             return;
         }
