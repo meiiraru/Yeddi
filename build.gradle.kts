@@ -1,7 +1,5 @@
 plugins {
     java
-    `java-library`
-    `maven-publish`
 }
 
 group = "com.github.meiiraru"
