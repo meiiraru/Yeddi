@@ -3,11 +3,11 @@ plugins {
 }
 
 group = "com.github.meiiraru"
-version = "1.0.0"
+version = "1.0.1"
 val mainClass = "yeddi.Yeddi"
 
 //dependencies
-val cinnamonVersion = "0.0.1"
+val cinnamonVersion = "0.0.2"
 
 val lwjglModules = arrayOf(
     "lwjgl",

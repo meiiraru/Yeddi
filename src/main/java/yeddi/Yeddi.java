@@ -15,12 +15,16 @@ public class Yeddi {
 
         Client c = Client.getInstance();
         c.mainScreen = JamMainMenu::new;
+        c.events.registerEvent(EventType.CLIENT_INIT, o -> {
+            c.window.allowFullscreen = false;
+            c.window.setResizable(false);
+        });
         c.events.registerEvent(EventType.SCROLL, o -> {
             double y = (double) o[1];
             int scale = (int) Math.min(c.window.width / 500f, c.window.height / 300f);
             scale = Math.max(1, scale + (int) Math.signum(y));
             c.window.guiScale = scale;
-            c.window.resize(500 * scale, 300 * scale);
+            c.window.setSize(500 * scale, 300 * scale);
         });
 
         new Cinnamon().run();
